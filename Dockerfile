@@ -24,7 +24,7 @@ FROM nginx:stable-alpine as runtime
 
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/docs /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
